@@ -22,7 +22,7 @@ public class AuthorModel implements Serializable
     private String name;
 
     @JsonProperty( access = JsonProperty.Access.WRITE_ONLY )
-    @ManyToOne( mappedBy = "authors", fetch = FetchType.LAZY )
+    @ManyToMany( mappedBy = "author", fetch = FetchType.LAZY )
     private Set<BookModel> books = new HashSet<>();
 
     public UUID getId()
