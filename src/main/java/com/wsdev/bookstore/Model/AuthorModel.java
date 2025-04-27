@@ -2,7 +2,7 @@ package com.wsdev.bookstore.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-
+import com.wsdev.bookstore.Model.BookModel;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +22,7 @@ public class AuthorModel implements Serializable
     private String name;
 
     @JsonProperty( access = JsonProperty.Access.WRITE_ONLY )
-    @ManyToMany( mappedBy = "author", fetch = FetchType.LAZY )
+    @ManyToMany( mappedBy = "authors", fetch = FetchType.LAZY )
     private Set<BookModel> books = new HashSet<>();
 
     public UUID getId()
